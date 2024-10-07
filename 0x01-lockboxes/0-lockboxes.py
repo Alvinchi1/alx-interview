@@ -4,15 +4,17 @@
 
 
 def canUnlockAll(boxes):
+    """
 
+    check if boxes can be unlocked
 
-""" this takes list of lists to unlock other lists"""
-    
-    keys =[0]
-    for key in keys:
-        if boxkey not in keys and boxkey < len(boxes):
-            keys.append(boxKey)
-    if len(keys) == len(boxes):
+    """
+    for key in range(1, len(boxes) - 1):
+        ctr = False
+        for idx in range(len(boxes)):
+            ctr = (key in boxes[idx] and key != idx)
+            if ctr:
+                break
+            if ctr is False:
+                return ctr
         return True
-    return False
-
