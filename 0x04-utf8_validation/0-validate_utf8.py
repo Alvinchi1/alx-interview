@@ -10,29 +10,25 @@ def validUTF8(data):
     mask_1 = 1 << 7
     mask_2 = 1 << 6
 
-     for i in data:
+    for i in data:
 
          mask_byte = 1 << 7
 
 
-         if numbewr_bytes == 0:
+         if number_bytes == 0:
 
              while mask_byte & i:
                 number_bytes += 1
                 mask_byte = mask_byte >> 1
 
-            if number_bytes == 0;
-
-                continue
+             if number_bytes == 0:
+                 continue
 
         else:
 
             if not (i & mask_1 and not (i & mask_2)):
                 return False
 
-            number_byutes -= 1
+            number_bytes -= 1
 
-        if number_bytes == 0:
-            return True
-
-        return False
+        return number_bytes == 0
