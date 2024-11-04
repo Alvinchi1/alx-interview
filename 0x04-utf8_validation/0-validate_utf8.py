@@ -21,14 +21,15 @@ def validUTF8(data):
                 number_bytes += 1
                 mask_byte = mask_byte >> 1
 
-             if number_bytes == 0:
-                 continue
+                if number_bytes == 0:
 
-        else:
+                    continue
+
+    else:
 
             if not (i & mask_1 and not (i & mask_2)):
                 return False
 
             number_bytes -= 1
 
-        return number_bytes == 0
+    return number_bytes == 0
